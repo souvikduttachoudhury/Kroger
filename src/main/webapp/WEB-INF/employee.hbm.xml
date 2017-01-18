@@ -4,7 +4,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
   
 <hibernate-mapping>  
-<class name="com.lister.Kroger.domain.Employee" table="employee_kroger">  
+<class name="com.lister.Project.domain.Employee" table="employee_kroger">  
           <id name="id">  
           <generator class="native"></generator>  
           </id>  
@@ -12,5 +12,9 @@
           <property name="name"></property>  
           <property name="salary"></property>  
 </class>  
+
+<query name="findEmployeeByName">  
+<![CDATA[from Employee e where e.name = :name]]>  
+</query>
             
 </hibernate-mapping> 
